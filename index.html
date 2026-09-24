@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SURPISE !!!</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+    <h1>You Have Received a Mail!!</h1>
+
+    <p class="instruction" id="instruction">
+        Click the seal to open
+    </p>
+
+    <div class="mail" id="mail">
+
+    <img 
+        src="images/envelope.png" 
+        class="envelope envelope-closed"
+        id="envelopeClosed"
+    >
+
+    <img 
+        src="images/envelope-open.png" 
+        class="envelope envelope-open"
+        id="envelopeOpen"
+    >
+
+    <img 
+        src="images/depan.png"
+        class="postcard-in-envelope"
+        id="postcardInEnvelope"
+        alt="Postcard"
+    >
+
+    <img 
+        src="images/wax-seal.png" 
+        class="wax-seal"
+        id="waxSeal"
+    >
+
+</div>
+
+    <!-- =========================
+         QUIZ
+    ========================== -->
+
+    <div class="quiz" id="quiz">
+
+        <!-- QUESTION 1 -->
+
+        <div class="question active" id="question1">
+
+            <h2>When is my birthday?</h2>
+
+            <input 
+                type="text"
+                id="birthdayInput"
+                placeholder="DD/MM/YY"
+                maxlength="8"
+            >
+
+            <button onclick="checkBirthday()">
+                Next
+            </button>
+
+            <p class="quiz-message" id="message1"></p>
+
+        </div>
+
+
+        <!-- QUESTION 2 -->
+
+        <div class="question" id="question2">
+
+            <h2>What's my favorite day of the week?</h2>
+
+            <div class="options">
+
+                <button onclick="checkDay('Monday')">
+                    Monday
+                </button>
+
+                <button onclick="checkDay('Tuesday')">
+                    Tuesday
+                </button>
+
+                <button onclick="checkDay('Wednesday')">
+                    Wednesday
+                </button>
+
+                <button onclick="checkDay('Thursday')">
+                    Thursday
+                </button>
+
+                <button onclick="checkDay('Friday')">
+                    Friday
+                </button>
+
+            </div>
+
+            <p class="quiz-message" id="message2"></p>
+
+        </div>
+
+
+        <!-- QUESTION 3 -->
+
+        <div class="question" id="question3">
+
+            <h2>Why?</h2>
+
+            <div class="options">
+
+                <button onclick="checkWhy('A')">
+                    A. It's the last weekday
+                </button>
+
+                <button onclick="checkWhy('B')">
+                    B. I just like the day
+                </button>
+
+                <button onclick="checkWhy('C')">
+                    C. It's movie night
+                </button>
+
+                <button onclick="checkWhy('D')">
+                    D. Something special happened on Friday
+                </button>
+
+            </div>
+
+            <p class="quiz-message" id="message3"></p>
+
+        </div>
+
+
+        <!-- CONGRATULATIONS -->
+
+        <div class="congratulations" id="congratulations">
+
+    <h2>🎉 Congratulations!</h2>
+
+    <p>You got them all right!</p>
+
+    <p>Your little surprise is waiting...</p>
+    </p> ( ◡̀  ̫ ◡́) ✧ </p>
+
+    <button onclick="continueToChoices()">
+        Open my surprise
+    </button>
+
+</div>
+
+</div> <!-- TUTUP QUIZ DI SINI -->
+
+<!-- =========================
+     LETTER / POSTCARD CHOICE
+========================= -->
+
+<div class="choices" id="choices">
+
+    <h2>What would you like to open?</h2>
+
+    <div class="choice-container">
+
+        <button class="choice-card" onclick="openLetter()">
+            <span class="choice-icon">💌</span>
+            <span class="choice-title">Letter</span>
+            <span class="choice-description">
+                A little message for you
+            </span>
+        </button>
+
+        <button class="choice-card" onclick="openPostcard()">
+            <span class="choice-icon">🖼️</span>
+            <span class="choice-title">Postcard</span>
+            <span class="choice-description">
+                A little picture for you
+            </span>
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     LETTER
+========================= -->
+
+<div class="letter-view" id="letterView">
+
+    <img
+        src="images/letterEja.png"
+        class="letter-image"
+        alt="Letter"
+    >
+
+    <button class="back-button" onclick="backToChoices()">
+        ← Back
+    </button>
+
+</div>
+
+<!-- =========================
+     POSTCARD
+========================= -->
+
+<div class="postcard-view" id="postcardView">
+
+    <div
+        class="postcard-flip"
+        onclick="flipPostcard()"
+    >
+
+        <div class="postcard-card" id="postcardFlip">
+
+            <div class="postcard-side postcard-front">
+                <img
+                    src="images/depan.png"
+                    alt="Postcard front"
+                >
+            </div>
+
+            <div class="postcard-side postcard-back">
+                <img
+                    src="images/belakang.png"
+                    alt="Postcard back"
+                >
+            </div>
+
+        </div>
+
+    </div>
+
+    <p class="flip-hint">
+        Click the postcard to flip ♡
+    </p>
+
+    <button class="back-button" onclick="backFromPostcard()">
+        ← Back
+    </button>
+
+</div>
+
+</main>
+
+<script src="script.js"></script>
+
+</body>
+</html>
